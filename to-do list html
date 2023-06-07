@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>To-Do List</title>
+  <style>
+    body {
+      background-color:black;
+      font-family: Arial, sans-serif;
+    }
+    
+    .container {
+      width: 400px;
+      margin: 0 auto;
+      background-color: #F9C0CD;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      box-sizing: border-box;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: #4CAF50; /* Green button color */
+      color: #FFFFFF;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2><u>My To-Do List</u></h2>
+    <input type="text" id="taskInput" placeholder="Title">
+    <button onclick="addTask()">Add</button>
+    <ul id="taskList"></ul>
+  </div>
+
+  <script>
+    function addTask() {
+      var taskInput = document.getElementById("taskInput");
+      var taskList = document.getElementById("taskList");
+      
+      var task = taskInput.value.trim();
+      
+      if (task !== "") {
+        var li = document.createElement("li");
+        li.innerText = task;
+        taskList.appendChild(li);
+        taskInput.value = "";
+      }
+    }
+  </script>
+</body>
+</html>
